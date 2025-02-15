@@ -111,3 +111,30 @@ counters.forEach(counter => {
 
     updateCount();
 });
+
+// Login modal functionality
+const modal = document.getElementById('login-modal');
+const loginBtn = document.getElementById('login-btn');
+const closeBtn = document.getElementsByClassName('close')[0];
+
+loginBtn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Login form submission (you can add your own logic here)
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add your login logic here
+    console.log('Login form submitted');
+    modal.style.display = 'none';
+});
